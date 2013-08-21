@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+		<title>Mouseover Madness</title>
+		<style>
+			ul li{opacity:.25; list-style:none;}
+			.1 {opacity:.25;}
+		</style>
+		<script src="jQuery.min.js"></script>
+	</head>
+
+	<body>       
+<ul id="nav">
+        <li>I'm ready!</li>
+        <li>You'll never take me alive, jQuery!</li>
+        <li>You'll  take me alive, jQuery!</li>
+</ul>
+
+<script type="text/javascript" >
+
+	$(document).ready(function(){
+    
+    //original code for mouse
+        $("#nav li").mouseenter(function(){
+            var thisli = $(this);
+            thisli.fadeTo("fast", 1);
+            thisli.dequeue();
+        });
+    
+        $("#nav li").mouseleave(function(){
+            var thisli = $(this);
+            thisli.fadeTo("fast", .25);
+            thisli.dequeue();           
+        });
+    
+    //this code adds the roles - add it to each section - now to figure out what ARIA roles to add!
+    //$("#nav li").attr("role","banner");
+    
+	});
+
+	</script>
+
+	</body>
+
+</html>

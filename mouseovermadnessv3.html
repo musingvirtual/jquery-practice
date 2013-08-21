@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+		<title>Mouseover Madness</title>
+		<style>
+			button{opacity:.25; list-style:none;}
+			.1 {opacity:.25;}
+		</style>
+		<script src="jQuery.min.js"></script>
+	</head>
+
+	<body>       
+        <button type="button">I'm ready!</button>
+        <button type="button">You'll never take me alive, jQuery!</button>
+        <button type="button">You'll take me alive, jQuery!</button>
+
+<script type="text/javascript" >
+
+	$(document).ready(function(){
+    
+    //original code for mouse
+        //$("#nav li").mouseenter(function(){
+          //  var thisli = $(this);
+          //  thisli.fadeTo("fast", 1);
+          //  thisli.dequeue();
+        // });
+    
+        //$("#nav li").mouseleave(function(){
+            //var thisli = $(this);
+            //thisli.fadeTo("fast", .25);
+            //thisli.dequeue();           
+        //});
+
+    //duplicating mouse code for keyboard focus
+    //this code is not working as designed right now
+    //the keyboard focus is working correctly, just not the fade in and fade out. might be a CSS problem?
+    
+    $("#nav button").focusin(function(){
+            var thisbutton = $(this);
+            thisbutton.fadeTo("fast", 1);
+            thisbutton.dequeue();
+        });
+    
+        $("#nav button").focusout(function(){
+            var thisbutton = $(this);
+            thisbutton.fadeTo("fast", .25);
+            thisbuttondequeue();           
+        });
+    
+    //this code adds the roles - add it to each section - now to figure out what ARIA roles to add!
+    //$("#nav li").attr("role","banner");
+    
+	});
+
+	</script>
+
+	</body>
+
+</html>
